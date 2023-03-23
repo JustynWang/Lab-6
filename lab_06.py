@@ -15,6 +15,15 @@ def encode(flat_password):
         int(encoded_password)
     return encoded_password
 
+def decode(encode):
+    flat_password = ""
+    for y in pass_list:
+        pass_list = [x + 10 if x>= 10 else x for x in pass_list]
+        flat_password += str(y)
+        int(flat_password)
+    return flat_password
+
+
 
 def menu():
     print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
@@ -31,6 +40,8 @@ def main():
             encoded_password = encode(password)
             print("Your password has been encoded and stored!")
         if user_menu == 2:
+            print(f"The encoded password is {encode}, and the original password is {decode(encode)}.")
+            
             # This is purely for testing if the functions work, which they do.
             # WHat should actually be here is the decoder, which will be very easy to do.
             # It is essentially the encoder but backwards, which should be very easy to implement with the caveat that
